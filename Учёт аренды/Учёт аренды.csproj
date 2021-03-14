@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Учёт_аренды</RootNamespace>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Views\Icons\Лого.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Views\БанкКлиент.png" />
+    <None Remove="Views\КонтекстнаяСправка.png" />
+    <None Remove="Views\Лого.png" />
+    <None Remove="Views\Настройки.png" />
+    <None Remove="Views\Начисл.png" />
+    <None Remove="Views\НовЗдан.png" />
+    <None Remove="Views\НовПом.png" />
+    <None Remove="Views\ОчиститьПоле.png" />
+    <None Remove="Views\Платёжка.png" />
+    <None Remove="Views\СписДог.png" />
+    <None Remove="Views\СписКонтраг.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\Icons\БанкКлиент.png" />
+    <Resource Include="Views\Icons\КонтекстнаяСправка.png" />
+    <Resource Include="Views\Icons\Лого.png" />
+    <Resource Include="Views\Icons\Настройки.png" />
+    <Resource Include="Views\Icons\Начисл.png" />
+    <Resource Include="Views\Icons\НовПом.png" />
+    <Resource Include="Views\Icons\ОчиститьПоле.png" />
+    <Resource Include="Views\Icons\Платёжка.png" />
+    <Resource Include="Views\Icons\СписДог.png" />
+    <Resource Include="Views\Icons\СписКонтраг.png" />
+    <Resource Include="Views\Icons\НовЗдан.png" />
+  </ItemGroup>
+
+</Project>
