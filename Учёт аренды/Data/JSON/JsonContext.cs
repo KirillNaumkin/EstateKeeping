@@ -50,13 +50,15 @@ namespace Учёт_аренды.Data.JSON
             _Locations = null;
         }
 
-        internal static async Task<IEnumerable<Building>> GetBuildingsAsync() {
+        internal static async Task<IEnumerable<Building>> GetBuildingsAsync() 
+        {
             using FileStream stream = File.OpenRead(_buildingsFile);
             var result = await JsonSerializer.DeserializeAsync<IEnumerable<Building>>(stream);
             return result;
         }
         
-        internal static async Task SaveBuildingsAsync(IEnumerable<Building> buildings) {
+        internal static async Task SaveBuildingsAsync(IEnumerable<Building> buildings) 
+        {
             EnsureDbFolderExists();
             using FileStream createStream = File.Create(_buildingsFile);
             await JsonSerializer.SerializeAsync(createStream, buildings);
@@ -68,9 +70,11 @@ namespace Учёт_аренды.Data.JSON
             var c = 1;
             buildings.AddRange(Enumerable.Range(1, 3).Select(i => new Data.JSON.Building
             {
+                ID = Guid.NewGuid().ToString(),
                 Address = $"Адрес {c}",
                 Name = $"Здание {c}",
-                Comment = $"Примечание к зданию {c++}"
+                Comment = $"Примечание к зданию {c++}",
+                DateUpdated = DateTime.Now
             }));
             return buildings;
         }

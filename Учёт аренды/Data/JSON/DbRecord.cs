@@ -8,5 +8,6 @@ namespace Учёт_аренды.Data.JSON
     {
         public string ID { get; set; }
         public bool IsArchive { get; set; }
+        public DateTime DateUpdated { get; set; }
     }
 }

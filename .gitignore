@@ -9,6 +9,8 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.cdr
+*.pdn
 
 # Installable environmental files
 dotnet-runtime-3.1.12-win-x86.exe

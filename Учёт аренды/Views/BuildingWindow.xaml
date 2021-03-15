@@ -13,15 +13,6 @@
         <GroupBox DockPanel.Dock="Top" Header="Название">
             <TextBox/>
         </GroupBox>
-        <Grid DockPanel.Dock="Bottom">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Margin="7" Width="100" Content="Отмена" IsCancel="True" ToolTip="Сохранить и закрыть"/>
-            <Button Grid.Column="2" Margin="7" Width="100" Content="ОК" IsDefault="True" HorizontalAlignment="Right" ToolTip="Отменить и закрыть"/>
-        </Grid>
         <GroupBox DockPanel.Dock="Top" Header="Примечание">
             <TextBox Height="80" TextWrapping="Wrap"/>
         </GroupBox>
@@ -31,6 +22,15 @@
                 <TextBlock Text="Добавить новое" HorizontalAlignment="Center" Foreground="Blue" TextDecorations="Underline" Cursor="Hand"/>
             </StackPanel>
         </GroupBox>
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="7" Width="100" Content="Отмена" IsCancel="True" ToolTip="Сохранить и закрыть"/>
+            <Button Grid.Column="2" Margin="7" Width="100" Content="ОК" IsDefault="True" HorizontalAlignment="Right" ToolTip="Отменить и закрыть"/>
+        </Grid>
         <GroupBox DockPanel.Dock="Top" Header="Помещения">
             <DockPanel>
                 <StackPanel DockPanel.Dock="Bottom">

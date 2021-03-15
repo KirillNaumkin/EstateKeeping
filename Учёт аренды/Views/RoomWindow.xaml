@@ -13,15 +13,6 @@
         <GroupBox DockPanel.Dock="Top" Header="Площадь, кв.м">
             <TextBox/>
         </GroupBox>
-        <Grid DockPanel.Dock="Bottom">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Margin="7" Width="100" Content="Отмена" IsCancel="True" ToolTip="Сохранить и закрыть"/>
-            <Button Grid.Column="2" Margin="7" Width="100" Content="ОК" IsDefault="True" HorizontalAlignment="Right" ToolTip="Отменить и закрыть"/>
-        </Grid>
         <GroupBox DockPanel.Dock="Top" Header="Примечание">
             <TextBox Height="80" TextWrapping="Wrap"/>
         </GroupBox>
@@ -37,7 +28,16 @@
                 <TextBlock Text="Добавить нового" HorizontalAlignment="Center" Foreground="Blue" TextDecorations="Underline" Cursor="Hand"/>
             </StackPanel>
         </GroupBox>
-        <GroupBox DockPanel.Dock="Top" Header="Счётчики">
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="7" Width="100" Content="Отмена" IsCancel="True" ToolTip="Сохранить и закрыть"/>
+            <Button Grid.Column="2" Margin="7" Width="100" Content="ОК" IsDefault="True" HorizontalAlignment="Right" ToolTip="Отменить и закрыть"/>
+        </Grid>
+        <GroupBox DockPanel.Dock="Top" Header="Счётчики ЖКУ">
             <DockPanel>
                 <StackPanel DockPanel.Dock="Bottom">
                     <TextBlock Text="Добавить новый" HorizontalAlignment="Center" Foreground="Blue" TextDecorations="Underline" Cursor="Hand"/>

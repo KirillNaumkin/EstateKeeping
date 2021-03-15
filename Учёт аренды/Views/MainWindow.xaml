@@ -76,8 +76,8 @@
                     </Button>
                 </Grid>
                 <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical">
-                    <CheckBox Content="Показывать архивные здания"/>
-                    <CheckBox Content="Показывать свободные помещения"/>
+                    <CheckBox Content="Показывать архивные здания" IsChecked="{Binding ShowArchiveBuildings}"/>
+                    <CheckBox Content="Показывать свободные помещения" IsChecked="{Binding ShowVacantRooms}"/>
                 </StackPanel>
                 <DataGrid CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" ItemsSource="{Binding cvsBuildings}">
                     <DataGrid.Resources>
@@ -105,28 +105,28 @@
                 <ListView/>
             </DockPanel>
             <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
-                <Button Margin="2" ToolTip="Добавить здание">
+                <Button Margin="2" ToolTip="Добавить здание" Command="{Binding OpenBuildingCommand}">
                     <Button.Content>
                         <Image Source="/Views/Icons/НовЗдан.png"/>
                     </Button.Content>
                 </Button>
-                <Button Margin="2" ToolTip="Добавить помещение">
+                <Button Margin="2" ToolTip="Добавить помещение" Command="{Binding OpenRoomCommand}">
                     <Button.Content>
                         <Image Source="/Views/Icons/НовПом.png"/>
                     </Button.Content>
                 </Button>
                 <Separator Width="20" Background="{x:Null}"/>
-                <Button Margin="2" ToolTip="Начислить плату">
+                <Button Margin="2" ToolTip="Начислить плату" Command="{Binding OpenBillingsWindowCommand}">
                     <Button.Content>
                         <Image Source="/Views/Icons/Начисл.png"/>
                     </Button.Content>
                 </Button>
-                <Button Margin="2" ToolTip="Ввести данные о платеже">
+                <Button Margin="2" ToolTip="Ввести данные о платеже" Command="{Binding OpenPaymentWindowCommand}">
                     <Button.Content>
                         <Image Source="/Views/Icons/Платёжка.png"/>
                     </Button.Content>
                 </Button>
-                <Button Margin="2" ToolTip="Загрузить платежи из банк-клиента">
+                <Button Margin="2" ToolTip="Загрузить платежи из банк-клиента" IsEnabled="False">
                     <Button.Content>
                         <Image Source="/Views/Icons/БанкКлиент.png"/>
                     </Button.Content>

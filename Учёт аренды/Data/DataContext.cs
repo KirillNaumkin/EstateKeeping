@@ -8,7 +8,7 @@ namespace Учёт_аренды.Data
 {
     internal class DataContext
     {
-        private static IEnumerable<IBuilding> _Buildings;
+        //private static IEnumerable<IBuilding> _Buildings;
         
         /// <summary>
         /// Возвращает все записи классификатора.
@@ -45,14 +45,10 @@ namespace Учёт_аренды.Data
         /// </summary>
         /// <param name="getArchive">Следует ли включать в выборку архивные записи.</param>
         /// <returns>Перечень зданий</returns>
-        public static async Task<IEnumerable<IBuilding>> GetBuildings(bool getArchive = false)
+        public static async Task<IEnumerable<IBuilding>> GetBuildingsAsync(bool getArchive = false)
         {
-            if (_Buildings == null)
-            {
-                _Buildings = await JSON.JsonContext.GetBuildingsAsync();
-            }
-            if (!getArchive) _Buildings = _Buildings.Where(x => x.IsArchive == false);
-            return _Buildings;
+            var _Buildings = await JSON.JsonContext.GetBuildingsAsync();
+            return (getArchive) ? _Buildings : _Buildings.Where(x => x.IsArchive == false);
         }
 
         /// <summary>
@@ -61,7 +57,7 @@ namespace Учёт_аренды.Data
         /// <param name="building">Здание, помещения которого требуется получить.</param>
         /// <param name="getArchive">Следует ли включать в выборку архивные записи.</param>
         /// <returns>Перечень помещений.</returns>
-        public static IEnumerable<IRoom> GetRooms(IBuilding building, bool getArchive = false)
+        public static Task<IEnumerable<IRoom>> GetRoomsAsync(IBuilding building, bool getArchive = false)
         {
             throw new NotImplementedException();
         }
