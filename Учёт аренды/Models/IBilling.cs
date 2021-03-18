@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace Учёт_аренды.Models
 {
-    interface IBilling
+    public interface IBilling
     {
-        IContract Contract { get; set; }
-        DateTime StartDate { get; set; }
-        DateTime EndDate { get; set; }
-        decimal InvoiceAmount { get; set; }
-        IClsItem PaymentPurpose { get; set; }
-        IEnumerable<IPayment> Payments { get; set; }
+        public IContract Contract { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public decimal InvoiceAmount { get; set; }
+        public IClsItem PaymentPurpose { get; set; }
+        public IEnumerable<IPayment> Payments { get; set; }
     }
 }

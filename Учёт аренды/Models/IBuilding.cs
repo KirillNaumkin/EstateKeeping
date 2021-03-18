@@ -2,14 +2,14 @@
 
 namespace Учёт_аренды.Models
 {
-    interface IBuilding
+    public interface IBuilding
     {
-        ILocation Location { get; set; }
-        string Address { get; set; }
-        string LocationAndAddress { get => $"{Location}, {Address}"; }
-        string Name { get; set; }
-        IEnumerable<IRoom> Rooms { get; set; }
-        string Comment { get; set; }
-        bool IsArchive { get; set; }
+        public ILocation Location { get; set; }
+        public string Address { get; set; }
+        public string LocationAndAddress { get; }
+        public string Name { get; set; }
+        public IEnumerable<IRoom> Rooms { get; set; }
+        public string Comment { get; set; }
+        public bool IsArchive { get; set; }
     }
 }

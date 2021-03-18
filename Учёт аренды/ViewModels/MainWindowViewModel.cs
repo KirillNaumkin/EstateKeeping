@@ -52,7 +52,7 @@ namespace Учёт_аренды.ViewModels
         {
             get
             {
-                if (_Buildings == null) _Buildings = new ObservableCollection<IBuilding>(DataContext.GetBuildingsAsync(ShowArchiveBuildings).Result);
+                if (_Buildings == null) _Buildings = new ObservableCollection<IBuilding>(DataContext.GetBuildings());
                 return _Buildings;
             }
             set => Set(ref _Buildings, value);
@@ -123,6 +123,7 @@ namespace Учёт_аренды.ViewModels
 
         public MainWindowViewModel()
         {
+            Data.Json.Context.SaveAll(Data.Json.Context.GenerateTestBuildings());
             CloseApplicationCommand = new LambdaCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecuted);
             OpenBuildingCommand = new LambdaCommand(OnOpenBuildingCommandExecuted, CanOpenBuildingCommandExecuted);
             OpenRoomCommand = new LambdaCommand(OnOpenRoomCommandExecuted, CanOpenRoomCommandExecuted);

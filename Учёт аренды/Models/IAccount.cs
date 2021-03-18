@@ -1,7 +1,7 @@
 ﻿namespace Учёт_аренды.Models
 {
-    interface IAccount
+    public interface IAccount
     {
-        string Props { get; set; }
+        public string Props { get; set; }
     }
 }

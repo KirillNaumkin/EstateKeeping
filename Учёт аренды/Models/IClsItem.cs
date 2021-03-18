@@ -2,16 +2,9 @@
 
 namespace Учёт_аренды.Models
 {
-    public enum ClsRoots
+    public interface IClsItem
     {
-        ClsRoot = 0,
-        GaugeResourceType = 1,
-        SubjectType = 2,
-        PaymentPurpose = 3
-    }
-    interface IClsItem
-    {
-        ClsRoots Root { get; set; }
-        string Name { get; set; }
+        public IClsItem Root { get; set; }
+        public string Name { get; set; }
     }
 }

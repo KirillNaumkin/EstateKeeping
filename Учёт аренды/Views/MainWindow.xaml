@@ -24,7 +24,6 @@
             </Button>
             <Menu DockPanel.Dock="Left">
                 <MenuItem Header="Файл">
-                    <MenuItem Header="Создать тестфайлы данных" Click="MenuItem_Click"/>
                     <MenuItem Header="Настройки" ToolTip="Открыть настройки программы"/>
                     <Separator/>
                     <MenuItem Header="Выход" ToolTip="Выход из программы" Command="{Binding CloseApplicationCommand}"/>
@@ -79,12 +78,7 @@
                     <CheckBox Content="Показывать архивные здания" IsChecked="{Binding ShowArchiveBuildings}"/>
                     <CheckBox Content="Показывать свободные помещения" IsChecked="{Binding ShowVacantRooms}"/>
                 </StackPanel>
-                <DataGrid CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" ItemsSource="{Binding cvsBuildings}">
-                    <DataGrid.Resources>
-                        <CollectionViewSource x:Key="cvsBuildings" Source="{Binding Buildings}">
-
-                        </CollectionViewSource>
-                    </DataGrid.Resources>
+                <DataGrid CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" ItemsSource="{Binding Buildings}" SelectedItem="{Binding SelectedBuilding}">
                     <DataGrid.Columns>
                         <DataGridTemplateColumn Header="Здание" IsReadOnly="True" MaxWidth="200">
                             <DataGridTemplateColumn.CellTemplate>

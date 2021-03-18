@@ -2,10 +2,10 @@
 
 namespace Учёт_аренды.Models
 {
-    interface ISubject
+    public interface ISubject
     {
-        string Name { get; set; }
-        IClsItem Type { get; set; }
-        IEnumerable<IAccount> Accounts { get; set; }
+        public string Name { get; set; }
+        public IClsItem Type { get; set; }
+        public IEnumerable<IAccount> Accounts { get; set; }
     }
 }

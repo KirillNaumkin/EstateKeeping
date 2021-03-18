@@ -2,16 +2,16 @@
 
 namespace Учёт_аренды.Models
 {
-    interface IRoom
+    public interface IRoom
     {
-        IBuilding ParentBuilding { get; set; }
-        string Name { get; set; }
-        float Square { get; set; }
-        IEnumerable<IGauge> Gauges { get; set; }
-        ISubject Owner { get; set; }
-        string Comment { get; set; }
-        bool IsVacant { get; set; }
-        bool IsArchive { get; set; }
-        int SortOrder { get; set; }
+        public IBuilding ParentBuilding { get; set; }
+        public string Name { get; set; }
+        public float Square { get; set; }
+        public IEnumerable<IGauge> Gauges { get; set; }
+        public ISubject Owner { get; set; }
+        public string Comment { get; set; }
+        public bool IsVacant { get; set; }
+        public bool IsArchive { get; set; }
+        public int SortOrder { get; set; }
     }
 }

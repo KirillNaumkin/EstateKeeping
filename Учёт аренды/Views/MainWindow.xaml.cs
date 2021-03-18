@@ -26,10 +26,5 @@ namespace Учёт_аренды.Views
             this.FilterBox.Text = null;
             //FilterBox_TextChanged(FilterBox, null);
         }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            Data.JSON.JsonContext.SaveBuildingsAsync(Data.JSON.JsonContext.GenerateTestBuildings());
-        }
     }
 }

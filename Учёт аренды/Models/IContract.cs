@@ -3,20 +3,20 @@ using System.Collections.Generic;
 
 namespace Учёт_аренды.Models
 {
-    interface IContract
+    public interface IContract
     {
-        DateTime AgreementDate { get; set; }
-        string Number { get; set; }
-        IRoom Object { get; set; }
-        ISubject RentGiver { get; set; }
-        ISubject RentHolder { get; set; }
-        DateTime StartDate { get; set; }
-        DateTime EndDate { get; set; }
-        decimal RentalFee { get; set; }
-        string RentPurpose { get; set; }
-        IAccount Account { get; set; }
-        string Comment { get; set; }
-        byte PayDay { get; set; }
-        IEnumerable<IBilling> Billings { get; set; }
+        public DateTime AgreementDate { get; set; }
+        public string Number { get; set; }
+        public IRoom Object { get; set; }
+        public ISubject RentGiver { get; set; }
+        public ISubject RentHolder { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public decimal RentalFee { get; set; }
+        public string RentPurpose { get; set; }
+        public IAccount Account { get; set; }
+        public string Comment { get; set; }
+        public byte PayDay { get; set; }
+        public IEnumerable<IBilling> Billings { get; set; }
     }
 }

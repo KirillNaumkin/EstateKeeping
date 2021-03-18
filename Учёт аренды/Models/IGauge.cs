@@ -2,11 +2,12 @@
 
 namespace Учёт_аренды.Models
 {
-    interface IGauge
+    public interface IGauge
     {
-        string Number { get; set; }
-        IClsItem ResourceType { get; set; }
-        IEnumerable<IReading> Readings { get; set; }
-        bool IsArchive { get; set; }
+        public string Number { get; set; }
+        public IRoom Room { get; set; }
+        public IClsItem ResourceType { get; set; }
+        public IEnumerable<IReading> Readings { get; set; }
+        public bool IsArchive { get; set; }
     }
 }

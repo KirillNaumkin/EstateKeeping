@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using Учёт_аренды.Models;
 
-namespace Учёт_аренды.Data.JSON
+namespace Учёт_аренды.Data.Json
 {
-    class Reading : DbRecord, IReading
+    public class Reading : DbRecord, IReading
     {
         public string GaugeID { get; set; }
         public DateTime Date { get; set; }

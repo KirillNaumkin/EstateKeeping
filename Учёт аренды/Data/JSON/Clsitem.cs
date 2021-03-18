@@ -3,12 +3,23 @@ using System.Collections.Generic;
 using System.Text;
 using Учёт_аренды.Models;
 
-namespace Учёт_аренды.Data.JSON
+namespace Учёт_аренды.Data.Json
 {
-    class ClsItem : DbRecord, IClsItem
+    public class ClsItem : DbRecord, IClsItem
     {
-        public int ClsRootID { get; set; }
-        public ClsRoots Root { get; set; }
+        public string ClsRootID { get; set; }
         public string Name { get; set; }
+
+        IClsItem _Root;
+
+        public IClsItem Root
+        {
+            get
+            {
+                if (this._Root == null) this._Root = Context.GetAll<ClsItem>().Find(x => x.ID == this.ClsRootID);
+                return this._Root;
+            }
+            set => this._Root = value;
+        }
     }
 }

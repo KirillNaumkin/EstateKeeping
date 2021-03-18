@@ -3,13 +3,44 @@ using System.Collections.Generic;
 using System.Text;
 using Учёт_аренды.Models;
 
-namespace Учёт_аренды.Data.JSON
+namespace Учёт_аренды.Data.Json
 {
-    class Gauge : DbRecord, IGauge
+    public class Gauge : DbRecord, IGauge
     {
         public string Number { get; set; }
+        public string RoomID { get; set; }
         public string ResourceTypeID { get; set; }
-        public IClsItem ResourceType { get; set; }
-        public IEnumerable<IReading> Readings { get; set; }
+
+        IRoom _Room;
+        IClsItem _ResourceType;
+        IEnumerable<IReading> _Readings;
+
+        public IRoom Room
+        {
+            get
+            {
+                if (this._Room == null) this._Room = Context.GetAll<Room>().Find(x => x.ID == this.RoomID);
+                return this._Room;
+            }
+            set => this._Room = value;
+        }
+        public IClsItem ResourceType
+        {
+            get
+            {
+                if (this._ResourceType == null) this._ResourceType = Context.GetAll<ClsItem>().Find(x => x.ID == this.ResourceTypeID);
+                return this._ResourceType;
+            }
+            set => this._ResourceType = value;
+        }
+        public IEnumerable<IReading> Readings
+        {
+            get
+            {
+                if (this._Readings == null) this._Readings = Context.GetAll<Reading>().FindAll(x => x.GaugeID == this.ID);
+                return this._Readings;
+            }
+            set => this._Readings = value;
+        }
     }
 }

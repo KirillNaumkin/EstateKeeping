@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace Учёт_аренды.Models
 {
-    interface IPayment
+    public interface IPayment
     {
-        IAccount Account { get; set; }
-        DateTime Date { get; set; }
-        decimal Amount { get; set; }
-        string AccountString { get; set; }
-        string PurposeString { get; set; }
-        IEnumerable<IBilling> PaidBillings { get; set; }
-        string APIID { get; set; }
+        public IAccount Account { get; set; }
+        public DateTime Date { get; set; }
+        public decimal Amount { get; set; }
+        public string AccountString { get; set; }
+        public string PurposeString { get; set; }
+        public IEnumerable<IBilling> PaidBillings { get; set; }
+        public string APIID { get; set; }
     }
 }

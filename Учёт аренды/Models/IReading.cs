@@ -2,10 +2,10 @@
 
 namespace Учёт_аренды.Models
 {
-    interface IReading
+    public interface IReading
     {
-        DateTime Date { get; set; }
-        float Value { get; set; }
-        float LastRate { get; set; }
+        public DateTime Date { get; set; }
+        public float Value { get; set; }
+        public float LastRate { get; set; }
     }
 }

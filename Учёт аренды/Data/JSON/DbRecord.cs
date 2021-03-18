@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Учёт_аренды.Data.JSON
+namespace Учёт_аренды.Data.Json
 {
     public class DbRecord
     {

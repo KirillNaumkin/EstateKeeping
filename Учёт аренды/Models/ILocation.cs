@@ -4,10 +4,10 @@ namespace Учёт_аренды.Models
 {
     public interface ILocation
     {
-        string ParentID { get; set; }
-        ILocation Parent { get; set; }
-        string Name { get; set; }
-        IEnumerable<ILocation> Children { get; set; }
-        string ToString() => (Parent is null) ? Name : $"{Parent}, {Name}";
+        public string ParentID { get; set; }
+        public ILocation Parent { get; set; }
+        public string Name { get; set; }
+        public IEnumerable<ILocation> Children { get; set; }
+        public string ToString() => (Parent is null) ? Name : $"{Parent}, {Name}";
     }
 }
