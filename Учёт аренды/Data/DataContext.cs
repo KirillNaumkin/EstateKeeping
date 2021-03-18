@@ -13,21 +13,12 @@ namespace Учёт_аренды.Data
         /// <returns>Записи классификатора.</returns>
         public static IEnumerable<IClsItem> GetCls()
         {
-            var result = new List<IClsItem>();
-            return result;
-        }
-        
-        /// <summary>Возвращает записи классификатора, относящиеся к указанной категории.</summary>
-        /// <param name="root">Код категории записей классификатора.</param>
-        /// <returns>Записи выбранной категории.</returns>
-        public static IEnumerable<IClsItem> GetCls(ClsRoots root)
-        {
-            return GetCls().Where(x => x.Root == root);
+            return Context.GetAll<ClsItem>();
         }
         
         /// <summary>Возвращает иерархию объектов административно-территориального деления.</summary>
         /// <returns>Дерево элементов.</returns>
-        public static IEnumerable<ILocation> GetLocationsAsync()
+        public static IEnumerable<ILocation> GetLocations()
         {
             var locations = Json.Context.GetAll<Location>();
             return locations;
@@ -43,7 +34,7 @@ namespace Учёт_аренды.Data
         /// <summary>Возвращает выборку помещений, расположенных в указанном здании.</summary>
         /// <param name="building">Здание, помещения которого требуется получить.</param>
         /// <returns>Перечень помещений.</returns>
-        public static Task<IEnumerable<IRoom>> GetRoomsAsync(IBuilding building)
+        public static IEnumerable<IRoom> GetRooms(IBuilding building)
         {
             throw new NotImplementedException();
         }

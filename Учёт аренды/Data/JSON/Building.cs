@@ -23,7 +23,7 @@ namespace Учёт_аренды.Data.Json
         { 
             get
             {
-                if (_Location == null) _Location = Context.GetAll<Location>().Find(x => x.ID == this.LocationID);
+                if (_Location == null) _Location = Context.GetAll<Location>().Find(x => x.ID == this.LocationID.ToString());
                 return _Location;
             }
             set => _Location = value;

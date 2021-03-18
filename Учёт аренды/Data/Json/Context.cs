@@ -44,7 +44,7 @@ namespace Учёт_аренды.Data.Json
             }
             catch (Exception)
             {
-                return null;
+                return new List<T>();
             }
         }
 
