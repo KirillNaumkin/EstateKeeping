@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 using Учёт_аренды.Models;
 
 namespace Учёт_аренды.Data.Json
@@ -15,6 +16,7 @@ namespace Учёт_аренды.Data.Json
         IClsItem _ResourceType;
         IEnumerable<IReading> _Readings;
 
+        [JsonIgnore]
         public IRoom Room
         {
             get
@@ -24,6 +26,8 @@ namespace Учёт_аренды.Data.Json
             }
             set => this._Room = value;
         }
+        
+        [JsonIgnore]
         public IClsItem ResourceType
         {
             get
@@ -33,6 +37,8 @@ namespace Учёт_аренды.Data.Json
             }
             set => this._ResourceType = value;
         }
+        
+        [JsonIgnore]
         public IEnumerable<IReading> Readings
         {
             get

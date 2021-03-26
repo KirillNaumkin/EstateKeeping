@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 using Учёт_аренды.Models;
 
 namespace Учёт_аренды.Data.Json
@@ -19,6 +20,7 @@ namespace Учёт_аренды.Data.Json
         IEnumerable<IGauge> _Gauges;
         ISubject _Owner;
 
+        [JsonIgnore]
         public IBuilding ParentBuilding
         {
             get
@@ -28,6 +30,8 @@ namespace Учёт_аренды.Data.Json
             }
             set => this._ParentBuilding = value; 
         }
+        
+        [JsonIgnore]
         public IEnumerable<IGauge> Gauges
         {
             get
@@ -37,6 +41,8 @@ namespace Учёт_аренды.Data.Json
             }
             set => this._Gauges = value;
         }
+        
+        [JsonIgnore]
         public ISubject Owner
         {
             get

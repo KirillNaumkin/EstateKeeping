@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 using Учёт_аренды.Models;
 
 namespace Учёт_аренды.Data.Json
@@ -17,6 +18,7 @@ namespace Учёт_аренды.Data.Json
         ClsItem _PaymentPurpose;
         List<IPayment> _Payments;
 
+        [JsonIgnore]
         public IContract Contract 
         {
             get
@@ -26,6 +28,8 @@ namespace Учёт_аренды.Data.Json
             }
             set => this._Contract = value as Contract;
         }
+        
+        [JsonIgnore]
         public IClsItem PaymentPurpose
         {
             get
@@ -35,6 +39,8 @@ namespace Учёт_аренды.Data.Json
             }
             set => this._PaymentPurpose = value as ClsItem;
         }
+        
+        [JsonIgnore]
         public IEnumerable<IPayment> Payments
         {
             get

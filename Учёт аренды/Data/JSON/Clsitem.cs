@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 using Учёт_аренды.Models;
 
 namespace Учёт_аренды.Data.Json
@@ -12,6 +13,7 @@ namespace Учёт_аренды.Data.Json
 
         IClsItem _Root;
 
+        [JsonIgnore]
         public IClsItem Root
         {
             get

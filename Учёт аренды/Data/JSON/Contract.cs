@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 using Учёт_аренды.Models;
 
 namespace Учёт_аренды.Data.Json
@@ -26,6 +27,7 @@ namespace Учёт_аренды.Data.Json
         IAccount _Account;
         IEnumerable<IBilling> _Billings;
 
+        [JsonIgnore]
         public IRoom Object 
         { 
             get
@@ -35,6 +37,8 @@ namespace Учёт_аренды.Data.Json
             }
             set => this._Object = value; 
         }
+        
+        [JsonIgnore]
         public ISubject RentGiver 
         {
             get
@@ -44,6 +48,8 @@ namespace Учёт_аренды.Data.Json
             }
             set => this._RentGiver = value; 
         }
+        
+        [JsonIgnore]
         public ISubject RentHolder 
         {
             get
@@ -53,6 +59,8 @@ namespace Учёт_аренды.Data.Json
             }
             set => this._RentHolder = value;
         }
+        
+        [JsonIgnore]
         public IAccount Account
         {
             get
@@ -62,6 +70,8 @@ namespace Учёт_аренды.Data.Json
             }
             set => this._Account = value;
         }
+        
+        [JsonIgnore]
         public IEnumerable<IBilling> Billings
         {
             get

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 using Учёт_аренды.Models;
 
 namespace Учёт_аренды.Data.Json
@@ -13,6 +14,7 @@ namespace Учёт_аренды.Data.Json
         ILocation _Parent;
         IEnumerable<ILocation> _Children;
 
+        [JsonIgnore]
         public ILocation Parent
         {
             get
@@ -22,6 +24,8 @@ namespace Учёт_аренды.Data.Json
             }
             set => this._Parent = value;
         }
+        
+        [JsonIgnore]
         public IEnumerable<ILocation> Children
         {
             get

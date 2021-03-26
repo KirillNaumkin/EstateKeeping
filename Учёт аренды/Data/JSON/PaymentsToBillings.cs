@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 using Учёт_аренды.Models;
 
 namespace Учёт_аренды.Data.Json
@@ -13,6 +14,7 @@ namespace Учёт_аренды.Data.Json
         IBilling _Billing;
         IPayment _Payment;
 
+        [JsonIgnore]
         public IBilling Billing
         {
             get
@@ -22,6 +24,8 @@ namespace Учёт_аренды.Data.Json
             }
             set => this._Billing = value;
         }
+        
+        [JsonIgnore]
         public IPayment Payment
         {
             get
